@@ -1,0 +1,32 @@
+.weather__details {
+  margin-top: 60px;
+  margin-left: 85px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  position: relative;
+}
+
+.weather__details > div {
+  margin-bottom: 10px;
+}
+
+.weather__details > .current-condition {
+  position: absolute;
+  left: 210px;
+  bottom: -12px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .weather__details {
+    margin: 0px;
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    }
+  
+  .weather__details .current-condition {
+    position: absolute;
+    left: 130px;
+    bottom: -40px;
+  }
+}
