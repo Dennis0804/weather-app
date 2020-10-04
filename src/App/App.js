@@ -45,7 +45,7 @@ class App extends React.Component {
       const result = await api_call.json();
 
       console.log(result);
-      
+
       this.setState({
         temperature: Math.round(result.list[0].main.temp - 273.15),
         city: result.city.name,
@@ -75,30 +75,52 @@ class App extends React.Component {
   };
 
   render() {
+    const {
+      temperature,
+      city,
+      country,
+      date,
+      id,
+      speed,
+      description,
+      icon,
+      error,
+      forecastOneDay,
+      forecastTwoDay,
+      forecastThreeDay,
+      forecastFourDay,
+      forecastFiveDay,
+      icon1,
+      icon2,
+      icon3,
+      icon4,
+      icon5,
+    } = this.state;
+
     return (
       <div className="weather__container">
         <Header />
         <Form getWeather={this.getWeather} />
         <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          date={this.state.date}
-          id={this.state.id}
-          wind={this.state.speed}
-          description={this.state.description}
-          icon={this.state.icon}
-          error={this.state.error}
-          forecastOneDay={this.state.forecastOneDay}
-          forecastTwoDay={this.state.forecastTwoDay}
-          forecastThreeDay={this.state.forecastThreeDay}
-          forecastFourDay={this.state.forecastFourDay}
-          forecastFiveDay={this.state.forecastFiveDay}
-          icon1={this.state.icon1}
-          icon2={this.state.icon2}
-          icon3={this.state.icon3}
-          icon4={this.state.icon4}
-          icon5={this.state.icon5}
+          temperature={temperature}
+          city={city}
+          country={country}
+          date={date}
+          id={id}
+          wind={speed}
+          description={description}
+          icon={icon}
+          error={error}
+          forecastOneDay={forecastOneDay}
+          forecastTwoDay={forecastTwoDay}
+          forecastThreeDay={forecastThreeDay}
+          forecastFourDay={forecastFourDay}
+          forecastFiveDay={forecastFiveDay}
+          icon1={icon1}
+          icon2={icon2}
+          icon3={icon3}
+          icon4={icon4}
+          icon5={icon5}
         />
       </div>
     );
